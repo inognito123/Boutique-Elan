@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Boutique Élan</title>
+    <style>
+        /* Maintain consistent styling with other pages */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.7);
+            z-index: -1;
+        }
+
+        header {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            margin-right: 50px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        /* Contact Page Specific Styles */
+        .contact-container {
+            padding: 140px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-details li {
+            margin-bottom: 25px;
+            padding-left: 40px;
+            position: relative;
+            font-size: 1.1em;
+        }
+
+        .contact-details li::before {
+            content: '✉️';
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .contact-details li:nth-child(2)::before {
+            content: '📱';
+        }
+
+        .contact-details li:nth-child(3)::before {
+            content: '📱';
+        }
+
+        .map-container {
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                padding: 120px 15px 30px;
+            }
+            
+            .contact-info {
+                padding: 25px;
+            }
+            
+            nav {
+                margin-right: 20px;
+                gap: 20px;
+            }
+        }
+        .menu-icon {
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 3px;
+    background-color: #2c2c2c;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links a {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .menu-icon.active .bar1 {
+        transform: rotate(-45deg) translate(-6px, 6px);
+    }
+    
+    .menu-icon.active .bar2 {
+        opacity: 0;
+    }
+    
+    .menu-icon.active .bar3 {
+        transform: rotate(45deg) translate(-6px, -6px);
+    }
+}
+header {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    margin-left: auto; /* This pushes the menu icon to the right */
+    z-index: 1001;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        position: relative;
+        right: 20px; /* Adds some spacing from the right edge */
+    }
+}
+.developers-info {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.developers-info h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.developers-list {
+    list-style: none;
+    padding: 0;
+}
+
+.developers-list li {
+    color: #555;
+    font-size: 1em;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.developers-list li::before {
+    content: '👨‍💻';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Boutique Élan</div>
+        <div class="menu-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <ul class="contact-details">
+                        <li>
+                            Email: <a href="mailto:infoboutiqueelan@gmail.com">infoboutiqueelan@gmail.com</a>
+                        </li>
+                        <li>
+                            Phone: <a href="tel:+254796189490">+254 796 189490</a>
+                        </li>
+                        <li>
+                            Phone: <a href="tel:+254705623350">+254 705 623350</a>
+                        </li>
+                    </ul>
+            
+                    <div class="developers-info">
+                        <h3>Developed by:</h3>
+                        <ul class="developers-list">
+                            <li>Joseph Muhiri</li>
+                            <li>Sammy Muhiri</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.847476219404!2d36.82120931475385!3d-1.268635599078298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173c0a1f9de7%3A0xad2c84df1f7f2ec8!2sNairobi%20City%20Centre%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1623939668395!5m2!1sen!2ske" 
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+</body>
+</html>
+<script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuIcon.addEventListener('click', () => {
+        menuIcon.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+</script>
